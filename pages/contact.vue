@@ -7,7 +7,7 @@ useHead({
     <div class="sm:p-0 p-2">
         <div class="my-4">
             <p class="text-4xl">Contact Us</p>
-            <p class="text-xl font-thin text-primary">We're here to help and answer any questions you might have. We look forward to
+            <p class="text-xl font-thin">We're here to help and answer any questions you might have. We look forward to
                 hearing from you</p>
         </div>
         <ul class="sm:ml-8 mx-2 flex flex-col gap-3 text-lg font-thin">
