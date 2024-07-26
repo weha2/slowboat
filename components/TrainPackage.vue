@@ -12,23 +12,24 @@ const details = [
             <p class=" font-thin">฿1,600 / person</p>
         </div>
         <button class="btn btn-secondary w-full rounded-full my-4">
-            <p class="text-white">BUY NOW</p>
+            <p class="text-white">BOOK NOW</p>
         </button>
         <p class="text-sm">You will be same day at Luangprabang</p>
         <ul class="text-sm">
-            <li v-for="detail in details"><i class="pi pi-check"></i> {{ detail }}</li>
+            <li v-for="(detail, index) in details" :key="index"><i class="pi pi-check"></i> {{ detail }}</li>
         </ul>
         <div class="my-4">
             <p class="text-sm">the price is 1,990 / person</p>
             <div class="my-2">
                 <p class="text-sm text-primary font-bold">Include</p>
                 <ul class="text-sm">
-                    <li><i class="pi pi-check"></i> Transfer  from your hotel in Chiangrai to Chiangkhong  Thai border.</li>
-                    <li><i class="pi pi-check"></i> Bus ticket  Crosing  to Laos border.</li>
-                    <li><i class="pi pi-check"></i> Taxi go to our office  in Huayxai</li>
-                    <li><i class="pi pi-check"></i> Air van from Huayxai  to Nateuy  Station</li>
+                    <li><i class="pi pi-check"></i> Transfer from your hotel in Chiangrai to Chiangkhong Thai border.
+                    </li>
+                    <li><i class="pi pi-check"></i> Bus ticket Crosing to Laos border.</li>
+                    <li><i class="pi pi-check"></i> Taxi go to our office in Huayxai</li>
+                    <li><i class="pi pi-check"></i> Air van from Huayxai to Nateuy Station</li>
                     <li><i class="pi pi-check"></i> Train ticket to Luangprabang</li>
-                    <li><i class="pi pi-check"></i> Lunch box and drinking  water.</li>
+                    <li><i class="pi pi-check"></i> Lunch box and drinking water.</li>
                 </ul>
             </div>
             <div class="my-2">

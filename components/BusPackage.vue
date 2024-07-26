@@ -14,10 +14,10 @@ const details = [
             <p class=" font-thin">฿1,600 / person</p>
         </div>
         <button class="btn btn-accent w-full rounded-full my-4">
-            <p class="text-white">BUY NOW</p>
+            <p class="text-white">BOOK NOW</p>
         </button>
         <ul class="text-sm">
-            <li v-for="detail in details"><i class="pi pi-check"></i> {{ detail }}</li>
+            <li v-for="(detail, index) in details" :key="index"><i class="pi pi-check"></i> {{ detail }}</li>
         </ul>
         <div class="my-4">
             <p class="text-sm">the time may have not correct deppen on situation. and the road it's not same Thailand

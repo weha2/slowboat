@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useRoute } from 'nuxt/app';
-
 interface Item {
     id: string,
     name: string
