@@ -13,9 +13,11 @@ const details = [
             <p class="text-2xl font-semibold">🚃 Bus</p>
             <p class=" font-thin">฿1,600 / person</p>
         </div>
-        <button class="btn btn-accent w-full rounded-full my-4">
-            <p class="text-white">BOOK NOW</p>
-        </button>
+        <NuxtLink href="/package/bus">
+            <button class="btn btn-accent w-full rounded-full my-4">
+                <p class="text-white">BOOK NOW</p>
+            </button>
+        </NuxtLink>
         <ul class="text-sm">
             <li v-for="(detail, index) in details" :key="index"><i class="pi pi-check"></i> {{ detail }}</li>
         </ul>

@@ -9,11 +9,13 @@ const details = [
     <div class="w-full border-2 p-4 rounded-xl border-gray-50 hover:shadow-xl">
         <div>
             <p class="text-2xl font-semibold">🚝 Train</p>
-            <p class=" font-thin">฿1,600 / person</p>
+            <p class=" font-thin">฿1,990 / person</p>
         </div>
-        <button class="btn btn-secondary w-full rounded-full my-4">
-            <p class="text-white">BOOK NOW</p>
-        </button>
+        <NuxtLink href="/package/train">
+            <button class="btn btn-secondary w-full rounded-full my-4">
+                <p class="text-white">BOOK NOW</p>
+            </button>
+        </NuxtLink>
         <p class="text-sm">You will be same day at Luangprabang</p>
         <ul class="text-sm">
             <li v-for="(detail, index) in details" :key="index"><i class="pi pi-check"></i> {{ detail }}</li>
