@@ -61,7 +61,7 @@ const subTotal = computed(() => {
                         <p class="text-xl font-bold">฿{{ price.toCurrency() }}</p>
                     </div>
                     <div class="flex justify-between">
-                        <p class="text-xl">Person</p>
+                        <p class="text-xl">Total Traveler</p>
                         <p class="text-xl font-bold">{{ personList.length }}</p>
                     </div>
                 </div>
