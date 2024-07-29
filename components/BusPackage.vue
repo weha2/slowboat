@@ -11,7 +11,7 @@ const details = [
     <div class="w-full border-2 p-4 rounded-xl border-gray-50 hover:shadow-xl">
         <div>
             <p class="text-2xl font-semibold">🚃 Bus</p>
-            <p class=" font-thin">฿1,600 / person</p>
+            <p class=" font-thin">฿1,600.00 / person</p>
         </div>
         <NuxtLink href="/package/bus">
             <button class="btn btn-accent w-full rounded-full my-4">
@@ -27,7 +27,7 @@ const details = [
                 the seat is sleeping seat.</p>
         </div>
         <div class="my-4">
-            <p class="text-sm">the price is 1,600 / person</p>
+            <p class="text-sm">the price is 1,600.00 / person</p>
             <div class="my-2">
                 <p class="text-sm text-primary font-bold">Include</p>
                 <p class="text-sm">🛏️ Pick up transfer from hotel in Chiangrai to Chiang Khong border</p>

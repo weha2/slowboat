@@ -16,7 +16,7 @@ const details = [
     <div class="w-full border-2 p-4 rounded-xl border-gray-50 hover:shadow-xl">
         <div>
             <p class="text-2xl font-semibold">⛵️ Slow boat</p>
-            <p class=" font-thin">฿1,700 / person</p>
+            <p class=" font-thin">฿1,700.00 / person</p>
         </div>
         <NuxtLink href="/package/slowboat">
             <button class="btn btn-primary w-full rounded-full my-4">
@@ -28,7 +28,7 @@ const details = [
         </ul>
         <div class="my-4">
             <p class="text-sm font-semibold">Trip 2 days 1 night</p>
-            <p class="text-sm">the price is 1,700 / person</p>
+            <p class="text-sm">the price is 1,700.00 / person</p>
             <div class="my-2">
                 <p class="text-sm text-primary font-bold">Include</p>
                 <p class="text-sm">🛏️ Pick up transfer from hotel in Chiangrai to Chiang Khong border</p>

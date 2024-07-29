@@ -3,8 +3,11 @@ import type { DefineComponent, SlotsType } from 'vue'
 type IslandComponent<T extends DefineComponent> = T & DefineComponent<{}, {refresh: () => Promise<void>}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, SlotsType<{ fallback: { error: unknown } }>>
 interface _GlobalComponents {
       'BusPackage': typeof import("../components/BusPackage.vue")['default']
-    'Menu': typeof import("../components/Menu.vue")['default']
+    'Person': typeof import("../components/Person.vue")['default']
+    'PersonModal': typeof import("../components/PersonModal.vue")['default']
     'Photo': typeof import("../components/Photo.vue")['default']
+    'SignInButton': typeof import("../components/SignInButton.vue")['default']
+    'SignInModal': typeof import("../components/SignInModal.vue")['default']
     'SlowBoat': typeof import("../components/SlowBoat.vue")['default']
     'SlowboatHeader': typeof import("../components/SlowboatHeader.vue")['default']
     'SlowboatPackage': typeof import("../components/SlowboatPackage.vue")['default']
@@ -34,8 +37,11 @@ interface _GlobalComponents {
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
       'LazyBusPackage': typeof import("../components/BusPackage.vue")['default']
-    'LazyMenu': typeof import("../components/Menu.vue")['default']
+    'LazyPerson': typeof import("../components/Person.vue")['default']
+    'LazyPersonModal': typeof import("../components/PersonModal.vue")['default']
     'LazyPhoto': typeof import("../components/Photo.vue")['default']
+    'LazySignInButton': typeof import("../components/SignInButton.vue")['default']
+    'LazySignInModal': typeof import("../components/SignInModal.vue")['default']
     'LazySlowBoat': typeof import("../components/SlowBoat.vue")['default']
     'LazySlowboatHeader': typeof import("../components/SlowboatHeader.vue")['default']
     'LazySlowboatPackage': typeof import("../components/SlowboatPackage.vue")['default']
@@ -79,8 +85,11 @@ declare module 'vue' {
 }
 
 export const BusPackage: typeof import("../components/BusPackage.vue")['default']
-export const Menu: typeof import("../components/Menu.vue")['default']
+export const Person: typeof import("../components/Person.vue")['default']
+export const PersonModal: typeof import("../components/PersonModal.vue")['default']
 export const Photo: typeof import("../components/Photo.vue")['default']
+export const SignInButton: typeof import("../components/SignInButton.vue")['default']
+export const SignInModal: typeof import("../components/SignInModal.vue")['default']
 export const SlowBoat: typeof import("../components/SlowBoat.vue")['default']
 export const SlowboatHeader: typeof import("../components/SlowboatHeader.vue")['default']
 export const SlowboatPackage: typeof import("../components/SlowboatPackage.vue")['default']
@@ -110,8 +119,11 @@ export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
 export const LazyBusPackage: typeof import("../components/BusPackage.vue")['default']
-export const LazyMenu: typeof import("../components/Menu.vue")['default']
+export const LazyPerson: typeof import("../components/Person.vue")['default']
+export const LazyPersonModal: typeof import("../components/PersonModal.vue")['default']
 export const LazyPhoto: typeof import("../components/Photo.vue")['default']
+export const LazySignInButton: typeof import("../components/SignInButton.vue")['default']
+export const LazySignInModal: typeof import("../components/SignInModal.vue")['default']
 export const LazySlowBoat: typeof import("../components/SlowBoat.vue")['default']
 export const LazySlowboatHeader: typeof import("../components/SlowboatHeader.vue")['default']
 export const LazySlowboatPackage: typeof import("../components/SlowboatPackage.vue")['default']
