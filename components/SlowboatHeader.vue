@@ -49,11 +49,11 @@ const onShowLoginModal = (visible: boolean) => {
                             </NuxtLink>
                         </div>
                     </nav>
-                    <SignInButton @on-login="onShowLoginModal(true)" />
+                    <!-- <SignInButton @on-login="onShowLoginModal(true)" /> -->
                 </div>
             </div>
             <div class="sm:hidden flex">
-                <SignInButton @on-login="onShowLoginModal(true)" />
+                <!-- <SignInButton @on-login="onShowLoginModal(true)" /> -->
                 <div class="dropdown dropdown-end">
                     <button tabindex="0" class="btn btn-ghost">
                         <i class="pi pi-align-left text-2xl"></i>

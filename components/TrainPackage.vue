@@ -11,7 +11,7 @@ const details = [
             <p class="text-2xl font-semibold">🚝 Train</p>
             <p class=" font-thin">฿1,990.00 / person</p>
         </div>
-        <NuxtLink href="/package/train">
+        <NuxtLink href="https://wa.me/66830444534?text=Hello,%20I%20would%20like%20to%20book%20a%20Train%20Package.">
             <button class="btn btn-secondary w-full rounded-full my-4">
                 <p class="text-white">BOOK NOW</p>
             </button>
