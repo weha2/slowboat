@@ -12,7 +12,7 @@ useHead({
         </div>
         <ul class="sm:ml-8 mx-2 flex flex-col gap-3 text-lg font-thin">
             <li><i class="pi pi-map-marker mr-3"></i> No. 869/75, Thaivivatuthit Road, Wiang Subdistrict, Mueang Chiang Rai District, Chiang Rai</li>
-            <li><i class="pi pi-phone mr-3"></i> <a href="tel:+66613587500">+66613587500</a></li>
+            <li><i class="pi pi-phone mr-3"></i> <a href="tel:+66830444534">+66830444534</a></li>
             <li><i class="pi pi-envelope mr-3"></i> <a href="mailto:jzen.soft@gmail.com">slowboat.laos@gmail.com</a> </li>
         </ul>
     </div>
