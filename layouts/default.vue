@@ -11,6 +11,6 @@
             <p class=" font-thin">Created by 👨🏻‍💻 Weha Kriadchaingam</p>
             <p class=" text-gray-400 font-thin text-center">2024 Slowboat | All rights reserved</p>
         </footer>
-        <ChatButton />
+        <!-- <ChatButton /> -->
     </div>
 </template>

@@ -13,7 +13,7 @@ const details = [
             <p class="text-2xl font-semibold">🚃 Bus</p>
             <p class=" font-thin">฿1,600.00 / person</p>
         </div>
-        <NuxtLink href="https://wa.me/66830444534?text=Hello,%20I%20would%20like%20to%20book%20a%20Bus%20Package.">
+        <NuxtLink href="">
             <button class="btn btn-accent w-full rounded-full my-4">
                 <p class="text-white">BOOK NOW</p>
             </button>
