@@ -1,28 +1,25 @@
 <script setup lang="ts">
-import type { Person } from '~/domain/dtos/PersonDTO';
+import type { Person } from "~/domain/dtos/PersonDTO";
 
 const emit = defineEmits<{
-    onUpdatePerson: [Person[]]
-}>()
+    onUpdatePerson: [Person[]];
+}>();
 
-const visible = ref(false)
-const personList = ref<Person[]>([])
-const person = ref<Person | null>(null)
+const visible = ref(false);
+const personList = ref<Person[]>([]);
+const person = ref<Person | null>(null);
 
 const openPersonModal = (open: boolean) => {
-    visible.value = open
-}
+    visible.value = open;
+};
 
 const onAddPerson = (person: Person) => {
-    personList.value = [...personList.value, person]
-    emit('onUpdatePerson', personList.value)
-    openPersonModal(false)
-}
+    personList.value = [...personList.value, person];
+    emit("onUpdatePerson", personList.value);
+    openPersonModal(false);
+};
 
-const onUpdatePerson = (person: Person) => {
-
-}
-
+const onUpdatePerson = (person: Person) => { };
 </script>
 
 <template>
