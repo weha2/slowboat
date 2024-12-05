@@ -32,6 +32,10 @@ products.set(3, {
 
 const product = products.get(Number(route.params.id));
 
+if (!product) {
+  navigateTo("/");
+}
+
 useHead({
   title: `Booking ${product?.name}`,
 });
