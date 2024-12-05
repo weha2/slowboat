@@ -1,37 +1,14 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./components/**/*.{js,vue,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./nuxt.config.{js,ts}",
-    "./app.vue",
-  ],
+module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#2FAF5B",
+        primary: "#00b96b",
+        secondary: "#ff49db",
+        success: "#13ce66",
+        error: "#ff4949",
+        bus: '#F26B0F',
+        train: '#1F509A'
       },
     },
-  },
-  plugins: [require("daisyui")],
-  daisyui: {
-    themes: [
-      {
-        mytheme: {
-          primary: "#2FAF5B",
-          secondary: "#004F83",
-          accent: "#FFAA00",
-        },
-      },
-    ], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
-    darkTheme: "light", // name of one of the included themes for dark mode
-    base: true, // applies background color and foreground color for root element by default
-    styled: true, // include daisyUI colors and design decisions for all components
-    utils: true, // adds responsive and modifier utility classes
-    prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
-    logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
-    themeRoot: ":root", // The element that receives theme color CSS variables
   },
 };
