@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@ant-design-vue/nuxt": "^1.4.6",
+    "@pinia/nuxt": "^0.9.0",
     "ant-design-vue": "4.x",
     "dayjs": "^1.11.13",
     "nuxt": "^3.14.1592",
+    "pinia": "^2.3.0",
     "primeicons": "^7.0.0",
     "typescript": "^5.5.4",
     "vue": "latest"

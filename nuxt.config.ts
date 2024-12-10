@@ -3,8 +3,8 @@ export default defineNuxtConfig({
   ssr: false,
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@ant-design-vue/nuxt"],
+  modules: ["@nuxtjs/tailwindcss", "@ant-design-vue/nuxt", "@pinia/nuxt"],
   antd: {
-    extractStyle: true
+    extractStyle: true,
   },
 });
