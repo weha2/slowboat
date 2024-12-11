@@ -7,7 +7,7 @@ export const useProductStore = defineStore("product", {
     products: [] as Product[],
   }),
   actions: {
-    setProduct(product: Product) {
+    init(product: Product) {
       this.product = product;
     },
   },

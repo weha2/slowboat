@@ -1,34 +1,21 @@
-import { useContactStore } from "~/store/contactStore";
-import { useParticipantStore } from "~/store/participantStore";
-import { useProductStore } from "~/store/productStore";
-import type { Product } from "~/types/product";
+import { useContactStore } from "~/stores/contactStore";
+import { useParticipantStore } from "~/stores/participantStore";
+import { useProductStore } from "~/stores/productStore";
 
-export const useBooking = (id: number) => {
+export const useBookingForm = async (id: number) => {
   const productStore = useProductStore();
   const contactStore = useContactStore();
   const participantStore = useParticipantStore();
+  const { getProduct } = useProduct();
 
   const current = ref<number>(0);
 
-  const products = new Map<number, Product>();
+  const res = await getProduct(id);
 
-  products.set(1, {
-    name: "⛵️ Slow boat",
-    price: 1700,
-  });
-  products.set(2, {
-    name: "🚃 Bus",
-    price: 1600,
-  });
-  products.set(3, {
-    name: "🚝 Train",
-    price: 1990,
-  });
-
-  const product = products.get(Number(id));
-
-  if (product) {
-    productStore.setProduct(product);
+  if (res.data) {
+    productStore.init(res.data);
+  } else {
+    navigateTo("/");
   }
 
   const steps = [
@@ -62,7 +49,7 @@ export const useBooking = (id: number) => {
   };
 
   return {
-    product,
+    product: productStore.product,
     current,
     steps,
     previous,

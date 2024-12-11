@@ -3,5 +3,5 @@ export interface Contact {
   firstname: string;
   email: string;
   phoneCode: string;
-  numberPhone: string;
+  phoneNumber: string;
 }

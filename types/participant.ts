@@ -4,7 +4,7 @@ export interface Participant {
   firstname: string;
   email: string;
   phoneCode: string;
-  numberPhone: string;
+  phoneNumber: string;
   dateBirth: string;
   passport: string;
   gender: string;

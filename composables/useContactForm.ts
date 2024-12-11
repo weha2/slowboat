@@ -1,5 +1,5 @@
 import type { FormInstance } from "ant-design-vue";
-import { useContactStore } from "~/store/contactStore";
+import { useContactStore } from "~/stores/contactStore";
 import type { Contact } from "~/types/contact";
 
 export const useContactForm = () => {

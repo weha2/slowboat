@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useParticipantStore } from "~/store/participantStore";
-import { useProductStore } from "~/store/productStore";
+import { useParticipantStore } from "~/stores/participantStore";
+import { useProductStore } from "~/stores/productStore";
 
 const { product } = useProductStore();
 const participantStore = useParticipantStore();

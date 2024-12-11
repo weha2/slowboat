@@ -9,7 +9,7 @@ export const useContactStore = defineStore("contact", {
       firstname: "",
       email: "",
       phoneCode: "",
-      numberPhone: "",
+      phoneNumber: "",
     },
   }),
   actions: {

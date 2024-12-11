@@ -1,12 +1,8 @@
 <script setup lang="ts">
 const route = useRoute();
-const { product, current, steps, previous, next } = useBooking(
+const { product, current, steps, previous, next } = await useBookingForm(
   Number(route.params.id)
 );
-
-if (!product) {
-  navigateTo("/");
-}
 
 useHead({
   title: `Booking ${product?.name}`,

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useAdditionalStore } from "~/store/additionalStore";
+import { useAdditionalStore } from "~/stores/additionalStore";
 
 const additionalStore = useAdditionalStore();
 const additionalRequest = ref<string>(additionalStore.additional ?? "");

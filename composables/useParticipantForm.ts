@@ -1,7 +1,7 @@
 import type { FormInstance } from "ant-design-vue";
 import { ref } from "vue";
-import { useContactStore } from "~/store/contactStore";
-import { useParticipantStore } from "~/store/participantStore";
+import { useContactStore } from "~/stores/contactStore";
+import { useParticipantStore } from "~/stores/participantStore";
 import type { Participant } from "~/types/participant";
 
 export const useParticipantForm = () => {
@@ -19,7 +19,7 @@ export const useParticipantForm = () => {
       firstname: "",
       email: "",
       phoneCode: "",
-      numberPhone: "",
+      phoneNumber: "",
       dateBirth: "",
       gender: "",
       passport: "",
@@ -43,7 +43,7 @@ export const useParticipantForm = () => {
         firstname: contactStore.formData.firstname,
         email: contactStore.formData.email,
         phoneCode: contactStore.formData.phoneCode,
-        numberPhone: contactStore.formData.numberPhone,
+        phoneNumber: contactStore.formData.phoneNumber,
         dateBirth: "",
         gender: "",
         passport: "",

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useContactStore } from "~/store/contactStore";
-import { useDateStore } from "~/store/dateStore";
-import { useParticipantStore } from "~/store/participantStore";
-import { useProductStore } from "~/store/productStore";
+import { useContactStore } from "~/stores/contactStore";
+import { useDateStore } from "~/stores/dateStore";
+import { useParticipantStore } from "~/stores/participantStore";
+import { useProductStore } from "~/stores/productStore";
 
 const { product } = useProductStore();
 const { formattedDepartureDate } = useDateStore();

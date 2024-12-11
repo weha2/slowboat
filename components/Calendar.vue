@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import dayjs, { Dayjs } from "dayjs";
-import { useDateStore } from "~/store/dateStore";
+import { useDateStore } from "~/stores/dateStore";
 
 const dateStore = useDateStore();
 const departureDate = ref<Dayjs>(dateStore.getCurrentDate());
