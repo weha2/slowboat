@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { formRef, formState } = useContactForm();
+const { formRef, formState, countryCodes } = useContactForm();
 </script>
 <template>
   <a-form
@@ -65,7 +65,7 @@ const { formRef, formState } = useContactForm();
     <div class="flex flex-col sm:flex-row gap-4">
       <a-form-item
         label="Phone Code"
-        name="phoneCode"
+        name="countryCodeId"
         class="basis-1/4"
         :rules="[
           {
@@ -77,14 +77,20 @@ const { formRef, formState } = useContactForm();
         <a-select
           size="large"
           placeholder="please select phone code"
-          v-model:value="formState.phoneCode"
+          v-model:value="formState.countryCodeId"
         >
-          <a-select-option value="+66">+66 Thailand</a-select-option>
+          <a-select-option
+            v-for="countryCode in countryCodes"
+            :key="countryCode.id"
+            :value="countryCode.id"
+          >
+            {{ countryCode.dialCode }} {{ countryCode.name }}
+          </a-select-option>
         </a-select>
       </a-form-item>
       <a-form-item
         label="Phone Number"
-        name="numberPhone"
+        name="phoneNumber"
         class="w-full"
         :rules="[
           {
@@ -93,7 +99,7 @@ const { formRef, formState } = useContactForm();
           },
         ]"
       >
-        <a-input type="text" size="large" v-model:value="formState.numberPhone">
+        <a-input type="text" size="large" v-model:value="formState.phoneNumber">
           <template #prefix>
             <PhoneOutlined class="site-form-item-icon" />
           </template>

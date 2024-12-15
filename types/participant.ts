@@ -3,10 +3,10 @@ export interface Participant {
   lastname: string;
   firstname: string;
   email: string;
-  phoneCode: string;
+  countryCodeId: number;
   phoneNumber: string;
   dateBirth: string;
   passport: string;
-  gender: string;
-  nationality: string;
+  genderId: number;
+  countryNationalityId: number;
 }

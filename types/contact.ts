@@ -2,6 +2,6 @@ export interface Contact {
   lastname: string;
   firstname: string;
   email: string;
-  phoneCode: string;
+  countryCodeId: number;
   phoneNumber: string;
 }

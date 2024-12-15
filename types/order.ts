@@ -16,7 +16,7 @@ export interface Contact {
   lastname: string;
   firstname: string;
   email: string;
-  phoneCode: string;
+  countryCodeId: number;
   phoneNumber: string;
 }
 
@@ -25,10 +25,10 @@ export interface Participant {
   lastname?: string;
   firstname?: string;
   email?: string;
-  phoneCode?: string;
+  countryCodeId?: number;
   phoneNumber?: string;
   dateBirth?: Date;
-  gender?: string;
-  nationality?: string;
+  genderId?: number;
+  countryNationalityId?: number;
   passportNumber?: string;
 }

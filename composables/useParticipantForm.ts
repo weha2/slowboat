@@ -2,11 +2,22 @@ import type { FormInstance } from "ant-design-vue";
 import { ref } from "vue";
 import { useContactStore } from "~/stores/contactStore";
 import { useParticipantStore } from "~/stores/participantStore";
+import type { CountryCode } from "~/types/country-code";
+import type { CountryNationality } from "~/types/country-nationality";
+import type { Gender } from "~/types/gender";
 import type { Participant } from "~/types/participant";
 
 export const useParticipantForm = () => {
   const contactStore = useContactStore();
   const participantStore = useParticipantStore();
+  const countryStore = useCountryStore();
+  const { getGenders } = useGender();
+
+  const countryCodes = ref<CountryCode[]>(countryStore.countryCodes);
+  const countryNationalities = ref<CountryNationality[]>(
+    countryStore.countryNationalities
+  );
+  const genders = ref<Gender[]>([]);
   const formRef = ref<FormInstance>();
   const formState = ref<{ participants: Participant[] }>({
     participants: participantStore.participants,
@@ -18,12 +29,12 @@ export const useParticipantForm = () => {
       lastname: "",
       firstname: "",
       email: "",
-      phoneCode: "",
+      countryCodeId: 1274,
       phoneNumber: "",
       dateBirth: "",
-      gender: "",
+      genderId: 1,
       passport: "",
-      nationality: "",
+      countryNationalityId: 470,
     });
   };
 
@@ -42,25 +53,33 @@ export const useParticipantForm = () => {
         lastname: contactStore.formData.lastname,
         firstname: contactStore.formData.firstname,
         email: contactStore.formData.email,
-        phoneCode: contactStore.formData.phoneCode,
+        countryCodeId: contactStore.formData.countryCodeId,
         phoneNumber: contactStore.formData.phoneNumber,
         dateBirth: "",
-        gender: "",
+        genderId: 1,
         passport: "",
-        nationality: "",
+        countryNationalityId: 470,
       };
       formState.value.participants.shift();
       formState.value.participants.unshift(value);
     } catch (err) {}
   };
 
-  onMounted(() => {
+  const initGenders = async () => {
+    const res = await getGenders();
+    if (res.data) {
+      genders.value = res.data;
+    }
+  };
+
+  onMounted(async () => {
     if (participantStore.totalParticipants === 0) {
       addParticipant();
     }
     if (formRef.value) {
       participantStore.initFormRef(formRef.value);
     }
+    await initGenders();
   });
 
   watch(
@@ -74,6 +93,9 @@ export const useParticipantForm = () => {
   return {
     formRef,
     formState,
+    genders,
+    countryCodes,
+    countryNationalities,
     addParticipant,
     removeParticipant,
     copyContact,

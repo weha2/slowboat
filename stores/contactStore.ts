@@ -8,7 +8,7 @@ export const useContactStore = defineStore("contact", {
       lastname: "",
       firstname: "",
       email: "",
-      phoneCode: "",
+      countryCodeId: 1274,
       phoneNumber: "",
     },
   }),

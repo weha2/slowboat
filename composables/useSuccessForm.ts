@@ -29,20 +29,20 @@ export const useSuccessForm = () => {
           lastname: contact.lastname ?? "",
           firstname: contact.firstname ?? "",
           email: contact.email ?? "",
-          phoneCode: contact.phoneCode ?? "",
+          countryCodeId: contact.countryCodeId,
           phoneNumber: contact.phoneNumber ?? "",
         },
         participants: participants.flatMap((participant) => ({
           lastname: participant.lastname || "",
           firstname: participant.firstname ?? "",
           email: participant.email ?? "",
-          phoneCode: participant.phoneCode ?? "",
+          countryCodeId: participant.countryCodeId,
           phoneNumber: participant.phoneNumber ?? "",
           dateBirth: participant.dateBirth?.length
             ? new Date(participant.dateBirth)
             : undefined,
-          gender: participant.gender ?? "",
-          nationality: participant.nationality ?? "",
+          genderId: participant.genderId,
+          countryNationalityId: participant.countryNationalityId,
           passportNumber: participant.passport ?? "",
         })),
       };

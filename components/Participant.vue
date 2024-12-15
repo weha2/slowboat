@@ -1,6 +1,14 @@
 <script setup lang="ts">
-const { formRef, formState, addParticipant, removeParticipant, copyContact } =
-  useParticipantForm();
+const {
+  formRef,
+  formState,
+  genders,
+  countryCodes,
+  countryNationalities,
+  addParticipant,
+  removeParticipant,
+  copyContact,
+} = useParticipantForm();
 </script>
 <template>
   <a-form
@@ -84,16 +92,22 @@ const { formRef, formState, addParticipant, removeParticipant, copyContact } =
 
       <div class="flex flex-col sm:flex-row gap-4">
         <a-form-item
-          :name="['participants', index, 'phoneCode']"
+          :name="['participants', index, 'countryCodeId']"
           label="Phone Code"
           class="basis-1/4"
         >
           <a-select
-            v-model:value="participant.phoneCode"
+            v-model:value="participant.countryCodeId"
             size="large"
             placeholder="please select phone code"
           >
-            <a-select-option value="+66">+66 Thailand</a-select-option>
+            <a-select-option
+              v-for="countryCode in countryCodes"
+              :key="countryCode.id"
+              :value="countryCode.id"
+              >{{ countryCode.dialCode }}
+              {{ countryCode.name }}</a-select-option
+            >
           </a-select>
         </a-form-item>
         <a-form-item
@@ -102,7 +116,7 @@ const { formRef, formState, addParticipant, removeParticipant, copyContact } =
           class="w-full"
         >
           <a-input
-            v-model:value="participant.numberPhone"
+            v-model:value="participant.phoneNumber"
             type="text"
             size="large"
           >
@@ -141,30 +155,39 @@ const { formRef, formState, addParticipant, removeParticipant, copyContact } =
 
       <div class="flex flex-col sm:flex-row gap-4">
         <a-form-item
-          :name="['participants', index, 'gender']"
+          :name="['participants', index, 'genderId']"
           label="Gender"
           class="basis-1/4"
         >
           <a-select
-            v-model:value="participant.gender"
+            v-model:value="participant.genderId"
             size="large"
             placeholder="please select gen"
           >
-            <a-select-option value="male">Male</a-select-option>
-            <a-select-option value="female">FeMale</a-select-option>
+            <a-select-option
+              v-for="gender in genders"
+              :key="gender.id"
+              :value="gender.id"
+              >{{ gender.name }}</a-select-option
+            >
           </a-select>
         </a-form-item>
         <a-form-item
-          :name="['participants', index, 'nationality']"
+          :name="['participants', index, 'countryNationalityId']"
           label="Nationality"
           class="w-full"
         >
           <a-select
-            v-model:value="participant.nationality"
+            v-model:value="participant.countryNationalityId"
             size="large"
             placeholder="please select nationality"
           >
-            <a-select-option value="thai">Thai</a-select-option>
+            <a-select-option
+              v-for="nationality in countryNationalities"
+              :key="nationality.id"
+              :value="nationality.id"
+              >{{ nationality.nationality }}</a-select-option
+            >
           </a-select>
         </a-form-item>
       </div>
