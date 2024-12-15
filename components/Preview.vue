@@ -3,14 +3,20 @@ import { useContactStore } from "~/stores/contactStore";
 import { useDateStore } from "~/stores/dateStore";
 import { useParticipantStore } from "~/stores/participantStore";
 import { useProductStore } from "~/stores/productStore";
+import type { CountryCode } from "~/types/country-code";
 
 const { product } = useProductStore();
 const { formattedDepartureDate } = useDateStore();
+const countryStore = useCountryStore();
 const contactStore = useContactStore();
 const participantStore = useParticipantStore();
 
 const participant = participantStore.totalParticipants;
 const contact = contactStore.formData;
+
+const getCountryCode = (id: number): CountryCode | undefined => {
+  return countryStore.countryCodes.find((x) => x.id === id);
+};
 </script>
 <template>
   <a-card :bordered="false">
@@ -105,8 +111,8 @@ const contact = contactStore.formData;
     <div>
       <p class="text-sm font-thin">Mobile</p>
       <p class="text-lg">
-        {{ contact.phoneCode || "-" }}
-        {{ contact.numberPhone || "-" }}
+        {{ getCountryCode(contact.countryCodeId)?.dialCode || "-" }}
+        {{ contact.phoneNumber || "-" }}
       </p>
     </div>
   </a-card>
