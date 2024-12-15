@@ -1,22 +1,6 @@
 <script setup lang="ts">
-import { useContactStore } from "~/stores/contactStore";
-import { useDateStore } from "~/stores/dateStore";
-import { useParticipantStore } from "~/stores/participantStore";
-import { useProductStore } from "~/stores/productStore";
-import type { CountryCode } from "~/types/country-code";
-
-const { product } = useProductStore();
-const { formattedDepartureDate } = useDateStore();
-const countryStore = useCountryStore();
-const contactStore = useContactStore();
-const participantStore = useParticipantStore();
-
-const participant = participantStore.totalParticipants;
-const contact = contactStore.formData;
-
-const getCountryCode = (id: number): CountryCode | undefined => {
-  return countryStore.countryCodes.find((x) => x.id === id);
-};
+const { product, formattedDepartureDate, participant, contact, dialCode } =
+  usePreviewForm();
 </script>
 <template>
   <a-card :bordered="false">
@@ -111,7 +95,7 @@ const getCountryCode = (id: number): CountryCode | undefined => {
     <div>
       <p class="text-sm font-thin">Mobile</p>
       <p class="text-lg">
-        {{ getCountryCode(contact.countryCodeId)?.dialCode || "-" }}
+        {{ dialCode || "-" }}
         {{ contact.phoneNumber || "-" }}
       </p>
     </div>
