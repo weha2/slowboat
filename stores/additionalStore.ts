@@ -1,10 +1,14 @@
 export const useAdditionalStore = defineStore("additional", {
   state: () => ({
-    additional: null as string | null,
+    pickupLocation: null as string | null,
+    additionalRequest: null as string | null,
   }),
   actions: {
-    updateFields(additional: string) {
-      this.additional = additional;
+    updatePickupLocation(value: string) {
+      this.pickupLocation = value;
+    },
+    updateAdditionalRequest(value: string) {
+      this.additionalRequest = value;
     },
   },
 });

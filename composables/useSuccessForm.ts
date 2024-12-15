@@ -18,12 +18,14 @@ export const useSuccessForm = () => {
       const product = productStore.product;
       const participants = participantStore.participants;
       const date = dateStore.date;
-      const additionalRequest = additionalStore.additional ?? "";
+      const additionalRequest = additionalStore.additionalRequest ?? "";
+      const pickupLocation = additionalStore.pickupLocation ?? "";
       const contact = contactStore.formData;
       const body: Order = {
         productId: product?.id ?? 0,
         quantity: participants.length,
         date: date.toDate(),
+        pickupLocation: pickupLocation,
         additionalRequest: additionalRequest,
         contact: {
           lastname: contact.lastname ?? "",

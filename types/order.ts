@@ -4,6 +4,7 @@ export interface Order {
   price?: number;
   quantity: number;
   date: Date;
+  pickupLocation: string,
   additionalRequest: string;
   status?: string;
   statusMessage?: string;
