@@ -29,12 +29,12 @@ export const useParticipantForm = () => {
       lastname: "",
       firstname: "",
       email: "",
-      countryCodeId: 1274,
+      countryCodeId: 1,
       phoneNumber: "",
       dateBirth: "",
       genderId: 1,
       passport: "",
-      countryNationalityId: 470,
+      countryNationalityId: 1,
     });
   };
 
@@ -58,7 +58,7 @@ export const useParticipantForm = () => {
         dateBirth: "",
         genderId: 1,
         passport: "",
-        countryNationalityId: 470,
+        countryNationalityId: 1,
       };
       formState.value.participants.shift();
       formState.value.participants.unshift(value);

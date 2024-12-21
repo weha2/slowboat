@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { format } = useCurrency();
 const details = [
   "5.00-5.30 am pick up from hotel in chiangrai go to Chiang Khong.",
   "Take 2 hrs arrive  at Thailand  border done immigration stamp.",
@@ -11,7 +12,7 @@ const details = [
   <a-card hoverable>
     <div>
       <p class="text-2xl font-semibold">🚃 Bus</p>
-      <p class="font-thin">฿1,600.00 / person</p>
+      <p class="font-thin">{{ format(1600) }} / person</p>
     </div>
 
     <NuxtLink to="/booking/2">

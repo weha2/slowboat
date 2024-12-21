@@ -4,6 +4,7 @@ export const usePreviewForm = () => {
   const countryStore = useCountryStore();
   const contactStore = useContactStore();
   const participantStore = useParticipantStore();
+  const otherStore = useAdditionalStore();
 
   const participant = participantStore.totalParticipants;
   const contact = contactStore.formData;
@@ -17,5 +18,7 @@ export const usePreviewForm = () => {
     participant,
     contact,
     dialCode,
+    pickupLocation: otherStore.pickupLocation ?? "-",
+    additionalRequest: otherStore.additionalRequest ?? "-",
   };
 };

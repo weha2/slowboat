@@ -1,6 +1,14 @@
 <script setup lang="ts">
-const { product, formattedDepartureDate, participant, contact, dialCode } =
-  usePreviewForm();
+const { format } = useCurrency();
+const {
+  product,
+  formattedDepartureDate,
+  participant,
+  contact,
+  dialCode,
+  pickupLocation,
+  additionalRequest,
+} = usePreviewForm();
 </script>
 <template>
   <a-card :bordered="false">
@@ -20,12 +28,12 @@ const { product, formattedDepartureDate, participant, contact, dialCode } =
       <div>
         <p class="text-sm font-thin">Quantity</p>
         <p class="text-lg">
-          Participant - {{ product?.price || 0 }} x
+          Participant - {{ format(product?.price || 0) }} x
           {{ participant }}
         </p>
       </div>
       <p class="text-lg">
-        {{ (product?.price ?? 0) * participant }}
+        {{ format((product?.price ?? 0) * participant) }}
       </p>
     </div>
     <a-divider />
@@ -33,14 +41,14 @@ const { product, formattedDepartureDate, participant, contact, dialCode } =
       <div class="flex gap-4 justify-end">
         <p class="text-lg font-thin">Subtotal</p>
         <p class="text-lg">
-          {{ (product?.price ?? 0) * participant }}
+          {{ format((product?.price ?? 0) * participant) }}
         </p>
       </div>
       <div class="my-2"></div>
       <div class="flex gap-4 justify-end">
         <p class="text-lg font-thin">Checkout Amount</p>
         <p class="text-lg">
-          {{ (product?.price ?? 0) * participant }}
+          {{ format((product?.price ?? 0) * participant) }}
         </p>
       </div>
     </div>
@@ -48,7 +56,7 @@ const { product, formattedDepartureDate, participant, contact, dialCode } =
     <div class="flex gap-4 justify-end">
       <p class="text-lg font-thin">Total</p>
       <p class="text-lg">
-        {{ (product?.price ?? 0) * participant }}
+        {{ format((product?.price ?? 0) * participant) }}
       </p>
     </div>
   </a-card>
@@ -64,7 +72,7 @@ const { product, formattedDepartureDate, participant, contact, dialCode } =
     <div>
       <p class="text-sm font-thin">Amount</p>
       <div class="text-lg flex gap-2">
-        {{ (product?.price ?? 0) * participant }}
+        {{ format((product?.price ?? 0) * participant) }}
         <p class="font-thin">(Full amount)</p>
       </div>
     </div>
@@ -97,6 +105,23 @@ const { product, formattedDepartureDate, participant, contact, dialCode } =
       <p class="text-lg">
         {{ dialCode || "-" }}
         {{ contact.phoneNumber || "-" }}
+      </p>
+    </div>
+  </a-card>
+  <a-card :bordered="false">
+    <p class="text-xl font-bold text-primary">Other</p>
+    <a-divider />
+    <div>
+      <p class="text-sm font-thin">Pickup Location</p>
+      <p class="text-lg">
+        {{ pickupLocation || "-" }}
+      </p>
+    </div>
+    <a-divider />
+    <div>
+      <p class="text-sm font-thin">Addtional Request</p>
+      <p class="text-lg">
+        {{ additionalRequest || "-" }}
       </p>
     </div>
   </a-card>

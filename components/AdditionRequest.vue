@@ -6,15 +6,11 @@ const additionalRequest = ref<string>(additionalStore.additionalRequest ?? "");
 const pickupLocation = ref<string>(additionalStore.pickupLocation ?? "");
 
 watch(additionalRequest, (value) => {
-  if (value) {
-    additionalStore.updateAdditionalRequest(value);
-  }
+  additionalStore.updateAdditionalRequest(value);
 });
 
 watch(pickupLocation, (value) => {
-  if (value) {
-    additionalStore.updatePickupLocation(value);
-  }
+  additionalStore.updatePickupLocation(value);
 });
 </script>
 
@@ -30,6 +26,7 @@ watch(pickupLocation, (value) => {
       placeholder="Please fill pickup location."
     />
   </div>
+  <div class="my-4"></div>
   <div>
     <p class="text-2xl font-bold">📝 Additional Request</p>
     <div class="my-4"></div>

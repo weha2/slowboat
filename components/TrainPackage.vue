@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { format } = useCurrency();
 const details = [
   "5.00-5.30 am Pickup  from your hotel in chiangrai  takes 2 hrs to arrived  at  Chiangkhong  Thai border. Then our driver will put a stickers of our company  name on you  and take a photo of your group for sending to Laos team. Than you all group walk to immigration  for get exit  stamp from Thailand  and  backside immigration  will have bus for Crosing  to Laos border  just 5 minutes  our team will waiting  you for service  and help ypu apply  for  Laos visa need 1 photo and  ( 40 USD ) you can pay by Thai B but they will change you more for currency  exchange  and  at Laos border everyone  must to pay for the sticker visa 20 TB. Than after we bring you to our office  in Huayxai  for buy some snacks  sim card and we give you lunch box free .",
   "9.00 am The van will come to pick up you  go to Nateuy  Station  🚉  you will arrive  st Station  around  2.30-3.00 pm. Than",
@@ -9,7 +10,7 @@ const details = [
   <a-card hoverable>
     <div>
       <p class="text-2xl font-semibold">🚝 Train</p>
-      <p class="font-thin">฿1,990.00 / person</p>
+      <p class="font-thin">{{ format(1990) }} / person</p>
     </div>
 
     <NuxtLink to="/booking/3">

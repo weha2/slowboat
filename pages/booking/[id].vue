@@ -27,7 +27,7 @@ useHead({
         <Preview />
       </div>
       <div v-if="current === 2" class="m-2">
-        <Success />
+        <Payment />
       </div>
     </div>
     <StepNavigation :current="current" @previous="previous()" @next="next()" />

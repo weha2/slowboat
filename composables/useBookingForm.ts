@@ -26,7 +26,7 @@ export const useBookingForm = async (id: number) => {
       title: "Preview",
     },
     {
-      title: "Success",
+      title: "Payment",
     },
   ];
 
