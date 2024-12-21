@@ -57,7 +57,7 @@ const onSearch = (searchValue: string) => {
         <a-input-search
           v-model:value="search"
           size="large"
-          placeholder="Enter order number"
+          placeholder="Enter invoice number"
         >
           <template #addonBefore>
             <a-button type="link">Check Order</a-button>
