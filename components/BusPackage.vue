@@ -25,11 +25,10 @@ const details = [
       >
     </NuxtLink>
 
-    <ul class="text-sm">
-      <li v-for="(detail, index) in details" :key="index">
-        <i class="pi pi-check"></i> {{ detail }}
-      </li>
+    <ul v-for="(detail, index) in details" :key="index">
+      <li>{{ detail }}</li>
     </ul>
+
     <div class="my-4">
       <p class="text-sm">
         the time may have not correct deppen on situation. and the road it's not

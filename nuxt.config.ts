@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     omiseSecretKey: process.env.OMISE_SECRET_KEY,
     public: {
       apiBase: process.env.API_BASE_URL,
-      omisePublicKey: process.env.OMISE_PUBLIC_KEY
+      omisePublicKey: process.env.OMISE_PUBLIC_KEY,
+      TZ: process.env.TZ,
     },
   },
 });

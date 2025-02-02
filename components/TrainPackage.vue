@@ -24,11 +24,11 @@ const details = [
     </NuxtLink>
 
     <p class="text-sm">You will be same day at Luangprabang</p>
-    <ul class="text-sm">
-      <li v-for="(detail, index) in details" :key="index">
-        <i class="pi pi-check"></i> {{ detail }}
-      </li>
+
+    <ul v-for="(detail, index) in details" :key="index">
+      <li>{{ detail }}</li>
     </ul>
+
     <div class="my-4">
       <p class="text-sm">the price is 1,990.00 / person</p>
       <div class="my-2">

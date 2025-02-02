@@ -2,14 +2,21 @@
 import dayjs, { Dayjs } from "dayjs";
 import { useDateStore } from "~/stores/dateStore";
 
+const { format } = useDepartureDate();
 const dateStore = useDateStore();
-const departureDate = ref<Dayjs>(dateStore.getCurrentDate());
+const product = useProductStore();
+const date = ref<Dayjs>(dateStore.getCurrentDate());
 
-watch(departureDate, (newDepartureDate) => {
-  dateStore.setDate(newDepartureDate);
+const departureDate = ref<string>();
+
+watch(date, (newDate) => {
+  dateStore.setDate(newDate);
+  departureDate.value = format(date.value, product?.product);
 });
 
-const formattedDepartureDate = computed(() => dateStore.formattedDepartureDate);
+onMounted(() => {
+  departureDate.value = format(date.value, product?.product);
+});
 </script>
 <template>
   <div>
@@ -19,12 +26,12 @@ const formattedDepartureDate = computed(() => dateStore.formattedDepartureDate);
       >
         Departure Date :
         <p class="font-semibold sm:text-xl text-lg">
-          {{ formattedDepartureDate }}
+          {{ departureDate }}
         </p>
       </div>
       <a-calendar
-        v-model:value="departureDate"
-        :defaultValue="departureDate"
+        v-model:value="date"
+        :defaultValue="date"
         :fullscreen="false"
         :validRange="[dayjs().add(-1, 'days'), dayjs().add(1, 'year')]"
       />

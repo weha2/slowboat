@@ -1,6 +1,7 @@
 export const usePreviewForm = () => {
+  const { format } = useDepartureDate();
   const { product } = useProductStore();
-  const { formattedDepartureDate } = useDateStore();
+  const { date } = useDateStore();
   const countryStore = useCountryStore();
   const contactStore = useContactStore();
   const participantStore = useParticipantStore();
@@ -11,6 +12,8 @@ export const usePreviewForm = () => {
   const dialCode =
     countryStore.countryCodes.find((x) => x.id === contact.countryCodeId)
       ?.dialCode || "";
+
+  const formattedDepartureDate = format(date, product);
 
   return {
     product,
