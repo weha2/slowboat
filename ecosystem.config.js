@@ -1,11 +1,11 @@
-export default {
+module.exports = {
   apps: [
     {
-      name: "slowboat",
-      exec_mode: "cluster",
-      instances: "max",
-      script: "./node_modules/nuxt/bin/nuxt.js",
-      args: "start",
-    },
-  ],
-};
+      name: 'slowboat',
+      port: '3000',
+      exec_mode: 'cluster',
+      instances: 'max',
+      script: './.output/server/index.mjs'
+    }
+  ]
+}
