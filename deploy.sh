@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1. ดึงโค้ดล่าสุด (ถ้าใช้ Git)
-git pull dev/weha
+git pull
 
 # 2. ติดตั้ง dependencies
 yarn install # หรือใช้ npm install / yarn install
