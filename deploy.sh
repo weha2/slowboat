@@ -12,4 +12,4 @@ yarn install # หรือใช้ npm install / yarn install
 NODE_OPTIONS="--max-old-space-size=1024" yarn build  # หรือ npm run build / yarn build
 
 # 4. Reload PM2
-pm2 reload ecosystem.config.js --env production
+pm2 reload ecosystem.config.cjs --env production
