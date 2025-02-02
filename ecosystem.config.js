@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   apps: [
     {
       name: 'slowboat',
@@ -8,4 +8,4 @@ module.exports = {
       script: './.output/server/index.mjs'
     }
   ]
-}
+};
