@@ -2,12 +2,10 @@ module.exports = {
   apps: [
     {
       name: 'slowboat',
+      port: '3000',
       exec_mode: 'cluster',
       instances: 'max',
-      script: 'dist/src/main.js',
-      env: {
-        NODE_ENV: 'production',
-      },
-    },
-  ],
-};
+      script: './.output/server/index.mjs'
+    }
+  ]
+}
